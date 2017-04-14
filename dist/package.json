@@ -2,14 +2,12 @@
 	"name": "@vankeer/angular-cropper",
 	"version": "0.0.1",
 	"description": "Angular 2+ component wrapper for CropperJS",
-	"main": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"files": [
-		"dist"
-	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"prebuild": "rm -rf ./dist",
-		"build": "npm run prebuild && nglb --rootDir src --outDir dist"
+		"build": "npm run prebuild && ./node_modules/.bin/angular-library-builder --rootDir src --outDir dist",
+		"postinstall": "npm run build"
 	},
 	"keywords": [
 		"image",
