@@ -23,9 +23,9 @@ export interface IImageCropperResult {
 
 @Component({
 	selector: 'image-cropper',
-	providers: [  ],
+	providers: [],
 	styleUrls: ['./image-cropper.component.scss', './cropper.scss'],
-	templateUrl: './image-cropper.component.jade',
+	templateUrl: './image-cropper.component.html',
 	encapsulation: ViewEncapsulation.None,
 })
 export class ImageCropper {
@@ -79,7 +79,7 @@ export class ImageCropper {
 					dataUrl: canvas.toDataURL('image/png'),
 				})
 			}
-			canvas.toBlob(blob => resolve({ blob }))
+			canvas.toBlob(blob => resolve({blob}))
 		})
 
 		promise.then(res => {
@@ -90,7 +90,7 @@ export class ImageCropper {
 	private get cropperOption(): Cropper.CropperOptions {
 		let aspectRatio = NaN
 		if (this.settings) {
-			let { width, height } = this.settings
+			let {width, height} = this.settings
 			aspectRatio = width / height
 		}
 

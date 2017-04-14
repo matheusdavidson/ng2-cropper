@@ -16,6 +16,9 @@
 		"types": [
 			"node"
 		],
+		"typeRoots": [
+			"./types"
+		],
 		"declaration": true
 	},
 	"exclude": [

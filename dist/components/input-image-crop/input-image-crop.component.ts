@@ -18,8 +18,8 @@ function maybe<T>(value) {
 		useExisting: forwardRef(() => InputImageCrop),
 		multi: true,
 	}],
-	styleUrls: ['./input-image-crop.component.scss'],
-	templateUrl: './input-image-crop.component.html',
+	styles: [`:host{display:block;overflow:hidden;position:relative}.preview{width:100%}.btn-group .btn-remove,label{position:relative;cursor:pointer;display:inline-block}label{min-height:100px;background-color:#ddd;width:100%}label:hover .icon{color:#fff}label .icon{font-size:4em;color:rgba(255,255,255,.7);position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}input{position:absolute;opacity:0;width:0;height:0}.btn-group{position:absolute;right:.5em;top:1em;z-index:10}.btn-group .btn-remove{line-height:1;padding:.5em;border-radius:50%;background-color:rgba(255,255,255,.4);color:#555;width:2em;text-align:center}.btn-group .btn-remove+.btn-remove{margin-left:.5em}.btn-group .btn-remove:hover{background-color:rgba(255,255,255,.9)}`],
+	template: `<div class="btn-group" *ngIf="!isEmpty"><a class="btn-remove" (click)="remove($event)"><i class="fa fa-trash"></i> </a><a class="btn-remove" (click)="editImage($event)" *ngIf="recropable"><i class="fa fa-pencil"></i></a></div><label #label="#label"><div class="icon" *ngIf="isEmpty"><i class="fa fa-cloud-upload"></i></div><img class="preview" *ngIf="croppedUrl" [src]="croppedUrl"/> <input class="ghost" type="file" (change)="openCropperWindow($event.target)" [disabled]="!isEmpty" accept="image/*"/></label>`,
 })
 export class InputImageCrop implements ControlValueAccessor {
 	@Input() settings: IImageCropperSetting

@@ -1,0 +1,17 @@
+<div class="btn-group" *ngIf="!isEmpty">
+	<a class="btn-remove" (click)="remove($event)">
+		<i class="fa fa-trash"></i>
+	</a>
+	<a class="btn-remove" (click)="editImage($event)" *ngIf="recropable">
+		<i class="fa fa-pencil"></i>
+	</a>
+</div>
+<label #label="#label">
+	<div class="icon" *ngIf="isEmpty">
+		<i class="fa fa-cloud-upload"></i>
+	</div>
+	<img class="preview" *ngIf="croppedUrl" [src]="croppedUrl"/>
+	<input class="ghost" type="file"
+		   (change)="openCropperWindow($event.target)"
+		   [disabled]="!isEmpty" accept="image/*"/>
+</label>

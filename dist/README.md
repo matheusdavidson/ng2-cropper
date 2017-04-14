@@ -1,6 +1,3 @@
-> **IMPORTANT NOTE**
-> This fork was quickly hacked together so to have a functional Angular CropperJS component. This is not meant for production systems. Ignore anything else in this README.
-
 # Angular2 component wrapper for CropperJS
 
 ## Dependencies

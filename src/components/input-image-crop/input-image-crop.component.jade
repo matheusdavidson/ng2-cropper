@@ -8,8 +8,8 @@ label(#label)
 		i.fa.fa-cloud-upload
 	img.preview(*ngIf="croppedUrl", [src]="croppedUrl")
 	input.ghost(
-		type="file",
-		(change)="openCropperWindow($event.target)",
-		[disabled]="!isEmpty",
-		accept="image/*"
+	type="file",
+	(change)="openCropperWindow($event.target)",
+	[disabled]="!isEmpty",
+	accept="image/*"
 	)

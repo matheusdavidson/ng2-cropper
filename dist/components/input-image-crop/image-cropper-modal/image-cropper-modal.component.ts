@@ -14,7 +14,7 @@ export class ImageCropperModalContext extends BSModalContext {
 @Component({
 	selector: 'image-cropper-modal',
 	providers: [],
-	templateUrl: './image-cropper-modal.component.html',
+	template: `<div class="modal-content"><div class="modal-header"><button class="close" type="button" (click)="dialog.dismiss()"></button><h4 class="modal-title">{{ context.modalTitle }}</h4></div><div class="modal-body" #body="#body" style="min-height:250px;padding:0"><image-cropper #cropper style="width: 100%" [imageUrl]="context.imageUrl" (export)="saveData($event)" [settings]="context.settings" [cropbox]="context.cropbox"></image-cropper></div><div class="modal-footer"><button class="btn btn-default" type="button" (click)="dialog.dismiss()">{{ context.buttonCloseCaption }}</button> <button class="btn btn-primary" (click)="cropper.exportCanvas()" type="button" [disabled]="cropper.isLoading"><i class="fa fa-save"></i><span> {{ context.buttonSaveCaption }}</span></button></div></div>`,
 })
 export class ImageCropperModal implements ModalComponent<ImageCropperModalContext> {
 	private context
