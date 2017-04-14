@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"module": "es2015",
+		"module": "commonjs",
 		"target": "es5",
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
@@ -8,12 +8,28 @@
 		"sourceMap": true,
 		"moduleResolution": "node",
 		"lib": [
-			"es2015",
+			"es6",
 			"dom"
+		],
+		"noImplicitAny": false,
+		"noEmitHelpers": true,
+		"noEmitOnError": false,
+		"allowSyntheticDefaultImports": true,
+		"strictNullChecks": false,
+		"baseUrl": "./src",
+		"types": [
+			"node"
+		],
+		"typeRoots": [
+			"./types"
 		]
 	},
 	"angularCompilerOptions": {
 		"strictMetadataEmit": true,
 		"skipTemplateCodegen": true
-	}
+	},
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }

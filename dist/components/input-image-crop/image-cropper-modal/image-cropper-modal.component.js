@@ -1,24 +1,16 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-import { Component } from '@angular/core';
-import { DialogRef } from 'angular2-modal';
-import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var angular2_modal_1 = require("angular2-modal");
+var bootstrap_1 = require("angular2-modal/plugins/bootstrap");
 var ImageCropperModalContext = (function (_super) {
     __extends(ImageCropperModalContext, _super);
     function ImageCropperModalContext() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     return ImageCropperModalContext;
-}(BSModalContext));
-export { ImageCropperModalContext };
+}(bootstrap_1.BSModalContext));
+exports.ImageCropperModalContext = ImageCropperModalContext;
 var ImageCropperModal = (function () {
     function ImageCropperModal(dialog) {
         this.dialog = dialog;
@@ -33,9 +25,8 @@ var ImageCropperModal = (function () {
     };
     return ImageCropperModal;
 }());
-export { ImageCropperModal };
 ImageCropperModal.decorators = [
-    { type: Component, args: [{
+    { type: core_1.Component, args: [{
                 selector: 'image-cropper-modal',
                 providers: [],
                 template: "<div class=\"modal-content\"><div class=\"modal-header\"><button class=\"close\" type=\"button\" (click)=\"dialog.dismiss()\"></button><h4 class=\"modal-title\">{{ context.modalTitle }}</h4></div><div class=\"modal-body\" #body=\"#body\" style=\"min-height:250px;padding:0\"><image-cropper #cropper style=\"width: 100%\" [imageUrl]=\"context.imageUrl\" (export)=\"saveData($event)\" [settings]=\"context.settings\" [cropbox]=\"context.cropbox\"></image-cropper></div><div class=\"modal-footer\"><button class=\"btn btn-default\" type=\"button\" (click)=\"dialog.dismiss()\">{{ context.buttonCloseCaption }}</button> <button class=\"btn btn-primary\" (click)=\"cropper.exportCanvas()\" type=\"button\" [disabled]=\"cropper.isLoading\"><i class=\"fa fa-save\"></i><span> {{ context.buttonSaveCaption }}</span></button></div></div>",
@@ -43,6 +34,7 @@ ImageCropperModal.decorators = [
 ];
 /** @nocollapse */
 ImageCropperModal.ctorParameters = function () { return [
-    { type: DialogRef, },
+    { type: angular2_modal_1.DialogRef, },
 ]; };
+exports.ImageCropperModal = ImageCropperModal;
 //# sourceMappingURL=image-cropper-modal.component.js.map

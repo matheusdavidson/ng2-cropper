@@ -1,25 +1,27 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ImageCropper } from './components/image-cropper/image-cropper.component';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
+var image_cropper_component_1 = require("./components/image-cropper/image-cropper.component");
 var InlineCropperModule = (function () {
     function InlineCropperModule() {
     }
     return InlineCropperModule;
 }());
-export { InlineCropperModule };
 InlineCropperModule.decorators = [
-    { type: NgModule, args: [{
+    { type: core_1.NgModule, args: [{
                 imports: [
-                    CommonModule,
+                    common_1.CommonModule,
                 ],
                 declarations: [
-                    ImageCropper,
+                    image_cropper_component_1.ImageCropper,
                 ],
                 exports: [
-                    ImageCropper,
+                    image_cropper_component_1.ImageCropper,
                 ],
             },] },
 ];
 /** @nocollapse */
 InlineCropperModule.ctorParameters = function () { return []; };
+exports.InlineCropperModule = InlineCropperModule;
 //# sourceMappingURL=inline-cropper.module.js.map

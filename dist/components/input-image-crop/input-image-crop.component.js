@@ -1,9 +1,11 @@
-import { Component, forwardRef, Input, ViewChild, Renderer } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ImageCropperModal } from './image-cropper-modal/image-cropper-modal.component';
-import { overlayConfigFactory } from 'angular2-modal';
-import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
-import { DomSanitizer } from '@angular/platform-browser';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var image_cropper_modal_component_1 = require("./image-cropper-modal/image-cropper-modal.component");
+var angular2_modal_1 = require("angular2-modal");
+var bootstrap_1 = require("angular2-modal/plugins/bootstrap");
+var platform_browser_1 = require("@angular/platform-browser");
 function maybe(value) {
     return (value || {});
 }
@@ -94,7 +96,7 @@ var InputImageCrop = (function () {
         configurable: true
     });
     InputImageCrop.prototype.openModal = function (imageUrl) {
-        var config = overlayConfigFactory({
+        var config = angular2_modal_1.overlayConfigFactory({
             imageUrl: imageUrl,
             settings: this.settings,
             cropbox: this.cropbox,
@@ -102,8 +104,8 @@ var InputImageCrop = (function () {
             buttonSaveCaption: this.buttonSaveCaption,
             buttonCloseCaption: this.buttonCloseCaption,
             size: 'lg',
-        }, BSModalContext);
-        return this.modal.open(ImageCropperModal, config)
+        }, bootstrap_1.BSModalContext);
+        return this.modal.open(image_cropper_modal_component_1.ImageCropperModal, config)
             .then(function (r) { return r.result; })
             .catch(function (_) { return undefined; });
     };
@@ -139,13 +141,12 @@ var InputImageCrop = (function () {
     };
     return InputImageCrop;
 }());
-export { InputImageCrop };
 InputImageCrop.decorators = [
-    { type: Component, args: [{
+    { type: core_1.Component, args: [{
                 selector: 'input-image-crop',
                 providers: [{
-                        provide: NG_VALUE_ACCESSOR,
-                        useExisting: forwardRef(function () { return InputImageCrop; }),
+                        provide: forms_1.NG_VALUE_ACCESSOR,
+                        useExisting: core_1.forwardRef(function () { return InputImageCrop; }),
                         multi: true,
                     }],
                 styles: [":host{display:block;overflow:hidden;position:relative}.preview{width:100%}.btn-group .btn-remove,label{position:relative;cursor:pointer;display:inline-block}label{min-height:100px;background-color:#ddd;width:100%}label:hover .icon{color:#fff}label .icon{font-size:4em;color:rgba(255,255,255,.7);position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}input{position:absolute;opacity:0;width:0;height:0}.btn-group{position:absolute;right:.5em;top:1em;z-index:10}.btn-group .btn-remove{line-height:1;padding:.5em;border-radius:50%;background-color:rgba(255,255,255,.4);color:#555;width:2em;text-align:center}.btn-group .btn-remove+.btn-remove{margin-left:.5em}.btn-group .btn-remove:hover{background-color:rgba(255,255,255,.9)}"],
@@ -154,16 +155,17 @@ InputImageCrop.decorators = [
 ];
 /** @nocollapse */
 InputImageCrop.ctorParameters = function () { return [
-    { type: DomSanitizer, },
-    { type: Modal, },
-    { type: Renderer, },
+    { type: platform_browser_1.DomSanitizer, },
+    { type: bootstrap_1.Modal, },
+    { type: core_1.Renderer, },
 ]; };
 InputImageCrop.propDecorators = {
-    'settings': [{ type: Input },],
-    'recropable': [{ type: Input },],
-    'modalTitle': [{ type: Input },],
-    'buttonSaveCaption': [{ type: Input },],
-    'buttonCloseCaption': [{ type: Input },],
-    'labelRef': [{ type: ViewChild, args: ['label',] },],
+    'settings': [{ type: core_1.Input },],
+    'recropable': [{ type: core_1.Input },],
+    'modalTitle': [{ type: core_1.Input },],
+    'buttonSaveCaption': [{ type: core_1.Input },],
+    'buttonCloseCaption': [{ type: core_1.Input },],
+    'labelRef': [{ type: core_1.ViewChild, args: ['label',] },],
 };
+exports.InputImageCrop = InputImageCrop;
 //# sourceMappingURL=input-image-crop.component.js.map
