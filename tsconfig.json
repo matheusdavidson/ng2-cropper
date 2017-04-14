@@ -13,11 +13,9 @@
 		"strictNullChecks": false,
 		"lib": ["es6", "dom"],
 		"baseUrl": "./src",
-		"types": [
-			"node"
-		],
 		"typeRoots": [
-			"./types"
+			"node_modules/@types",
+			"types"
 		],
 		"declaration": true
 	},

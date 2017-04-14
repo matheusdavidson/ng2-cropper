@@ -1,4 +1,4 @@
-import Cropper from 'cropperjs'
+import Cropper from '../../types/cropperjs/index'
 import {
 	Component,
 	Input,
